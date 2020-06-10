@@ -1,0 +1,3118 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="SSFSD\msantos"
+  DTS:CreatorComputerName="DO-SQL2012"
+  DTS:CreationDate="6/2/2020 6:46:44 AM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{F8A096CE-85BD-4CE0-8D48-9162D313EABD}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SEISFileoutput"
+  DTS:DTSID="{F27AE490-9A2F-4F53-85A4-29B700F12BD1}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.101.3.31.msantos]"
+      DTS:ObjectName="10.101.3.31.msantos"
+      DTS:DTSID="{25FEE835-5337-4A89-8A07-577674601C92}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.101.3.31;User ID=msantos;Initial Catalog=ssfusd;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAaNk9puiolky973hxrNZKvAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABcJGuNy+OvfFm0TSSwEbsbAAAAAASAAACgAAAAEAAAALzwW9IIyE9kY4LNPKIO4u8YAAAAp5AqQCN0Y4El7v5iEVoj01vV/EXwi8gNFAAAAB2ZGZGnfxo/+Uu/Ec9VVfafLL1O</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:ObjectName="Flat File Connection Manager"
+      DTS:DTSID="{B90F2488-B54D-4FE6-98E2-91FA48554351}"
+      DTS:CreationName="FLATFILE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\UploadToSeis\866\Demographic.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LocalID"
+              DTS:DTSID="{596C2E95-606F-4E53-AC40-DD1F5F4568D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SSID"
+              DTS:DTSID="{7BDBDB2C-059F-4339-853E-B7EA2529B97E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SSN"
+              DTS:DTSID="{9B5022AE-F0AE-4A7E-92B7-C90D03A4C053}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{5E2D4C90-515D-4E2F-A1D9-F508513A7DAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{512D5407-0236-4AE3-9996-DF2342FB8CDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MiddleName"
+              DTS:DTSID="{83C41249-C058-4705-A9F1-C122035B30A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ethnicity"
+              DTS:DTSID="{D90C9C8A-DB6B-4AAA-88AB-926B7459361F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Race1"
+              DTS:DTSID="{317BCD7B-A0C0-4023-A31E-24648CB958AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Race2"
+              DTS:DTSID="{97A92318-8DC0-4A78-AED3-1FC7D51301D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Race3"
+              DTS:DTSID="{224DC263-7CBD-4C75-BBB0-4E470A449FE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{2213DEDD-B966-4CB5-BBC4-D7B63D6163B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Birthdate"
+              DTS:DTSID="{A461EAA0-FFB9-4326-9A72-75317BA728A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Migrant"
+              DTS:DTSID="{702774B8-B563-4C04-B065-B4DFAFBA3F30}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ELL"
+              DTS:DTSID="{05BAC4E4-5AE8-4A74-B4DF-6FAEFB251D64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GradeLevelCode"
+              DTS:DTSID="{D3C5A0FB-0F50-4EF8-B1EF-97F1892E7071}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1LastName"
+              DTS:DTSID="{D9941631-FDB0-49B7-A772-9CD028735022}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1FirstName"
+              DTS:DTSID="{251FFBFF-D9DA-4E70-9BFB-754B3EFC2858}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="105"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1Line1"
+              DTS:DTSID="{0AB59263-379A-420E-9A0B-5615F2238F0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="24"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1City"
+              DTS:DTSID="{5CE30499-FE8E-46DC-892F-8A474B12BA03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1StateProvince"
+              DTS:DTSID="{9B9AF4F7-D98E-4F3B-89DF-0C14F3524FF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1PostalCode"
+              DTS:DTSID="{F4EA65EA-C01D-4359-8B56-17E314CCEE73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="105"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1MailingAddress"
+              DTS:DTSID="{50D744F5-B30F-4DFF-BA22-43EAF2037946}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="24"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1MailingCity"
+              DTS:DTSID="{803379C3-233F-4F6E-B88B-58ED0D1794D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1MailingStateProvince"
+              DTS:DTSID="{D58A895D-E938-4EC7-98CB-A905BDB2ABEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1MailingPostalCode"
+              DTS:DTSID="{AB19C2C5-55B7-4BF3-A4E5-767F0859EE3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2LastName"
+              DTS:DTSID="{693A3138-43B7-4D0D-A06E-987F2B2679B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2FirstName"
+              DTS:DTSID="{BDA254C6-D7D2-49D6-9135-0B1CFEDDA8ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="105"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2Line1"
+              DTS:DTSID="{AEBF2240-76CE-4408-AD21-D5EC3695E9AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="24"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2City"
+              DTS:DTSID="{50647FE2-44A5-4628-AF53-8B7F2C4C947F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2StateProvince"
+              DTS:DTSID="{3CA82CAD-5B9E-4CC1-B8D8-2B6DF007E250}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2PostalCode"
+              DTS:DTSID="{3B96F901-EFDD-46FC-B928-7098C522FBE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1HomePhone"
+              DTS:DTSID="{1D936312-44F3-46F9-A7CD-B15E495E6947}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1CellPhone"
+              DTS:DTSID="{6FF8E754-D90D-4903-8CFF-0CE20DA957E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1OtherPhone"
+              DTS:DTSID="{B854CE7F-B0A2-4C11-8E8F-34F15474A4D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1EmailAddress"
+              DTS:DTSID="{4B708FA7-3056-4621-9997-E0F9C9039D87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1FatherWorkPhone"
+              DTS:DTSID="{DA00B68B-EDAF-435E-AA9F-96BE9018B197}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian1MotherWorkPhone"
+              DTS:DTSID="{FC38F89D-71F0-4A0D-8A04-D982F2BF6AC8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2HomePhone"
+              DTS:DTSID="{E840B36A-DD79-4D64-81A3-8AD6496FD55D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2CellPhone"
+              DTS:DTSID="{93A14A22-C35D-42C2-ADA3-528FA01265B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2OtherPhone"
+              DTS:DTSID="{9F38E78B-3C75-4257-B757-82ECB484445D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2EmailAddress"
+              DTS:DTSID="{2BF34AD3-0CAE-4256-A656-03DBC357B46D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="25"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentGuardian2WorkPhone"
+              DTS:DTSID="{F5D44706-D398-400E-86E7-06F204572DFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value1"
+              DTS:DTSID="{E6F18BF3-8660-446B-9B8A-1C003D76965B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value2"
+              DTS:DTSID="{69158B7B-F1E3-4246-9EAF-49DF03B64374}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value3"
+              DTS:DTSID="{1F443728-1322-46C2-8898-F2F306AAAF4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value4"
+              DTS:DTSID="{9940D0D4-BCF1-404D-BDE6-8437C43B29B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value5"
+              DTS:DTSID="{0F436A38-E14A-4E6E-8DAD-0A46F1D10402}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value6"
+              DTS:DTSID="{C59D68CB-48DC-4D94-A804-775EE5E61EA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value7"
+              DTS:DTSID="{B082B4C4-2165-4555-9B16-B7C8A9EEF3D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value8"
+              DTS:DTSID="{E7CFFA0E-48A3-46AA-A2A0-886DB3B30E8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value9"
+              DTS:DTSID="{B3E38EBF-1F7A-4D5E-AC82-324DAB976CCC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value10"
+              DTS:DTSID="{5212F6C0-EAC9-4812-94C1-EBEC7D431A01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value11"
+              DTS:DTSID="{941032FC-D9BF-4298-8DD6-3E6D0C985A90}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value12"
+              DTS:DTSID="{34EF0EC8-475C-401A-8FFE-E69C2A14146D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value13"
+              DTS:DTSID="{217E748D-3CBE-47DE-A951-EE40623DA607}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value14"
+              DTS:DTSID="{694883D6-BBB9-46E2-B37A-A22394297177}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value15"
+              DTS:DTSID="{CBF18D79-760A-48FC-BA09-F3A3477AA96A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:DTSID="{4FB71BF6-8946-42AC-8CEE-11B77F432B58}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination"
+              name="Flat File Destination"
+              componentClassID="{8DA75FED-1B7C-407D-B2AD-2B24209CCCA4}"
+              description="Flat File Destination"
+              localeId="1033"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <properties>
+                <property
+                  name="Overwrite"
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file.">true</property>
+                <property
+                  name="Header"
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                  name="FlatFileConnection"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Flat File Destination Input"
+                  hasSideEffects="true">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[LocalID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocalID]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LocalID]"
+                      cachedName="LocalID"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[SSID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SSID]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SSID]"
+                      cachedName="SSID"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[SSN]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SSN]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SSN]"
+                      cachedName="SSN"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[LastName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      cachedName="LastName"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      cachedName="FirstName"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[MiddleName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MiddleName]"
+                      cachedName="MiddleName"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Ethnicity]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ethnicity]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Ethnicity]"
+                      cachedName="Ethnicity"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Race1]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race1]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Race1]"
+                      cachedName="Race1"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Race2]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race2]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Race2]"
+                      cachedName="Race2"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Race3]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race3]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Race3]"
+                      cachedName="Race3"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Gender]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      cachedName="Gender"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Birthdate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birthdate]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Birthdate]"
+                      cachedName="Birthdate"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Migrant]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Migrant]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Migrant]"
+                      cachedName="Migrant"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ELL]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ELL]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ELL]"
+                      cachedName="ELL"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[GradeLevelCode]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[GradeLevelCode]"
+                      cachedName="GradeLevelCode"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1LastName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1LastName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1LastName]"
+                      cachedName="ParentGuardian1LastName"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1FirstName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1FirstName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1FirstName]"
+                      cachedName="ParentGuardian1FirstName"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1Line1]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1Line1]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1Line1]"
+                      cachedName="ParentGuardian1Line1"
+                      cachedDataType="str"
+                      cachedLength="105"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1City]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1City]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1City]"
+                      cachedName="ParentGuardian1City"
+                      cachedDataType="str"
+                      cachedLength="24"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1StateProvince]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1StateProvince]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1StateProvince]"
+                      cachedName="ParentGuardian1StateProvince"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1PostalCode]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1PostalCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1PostalCode]"
+                      cachedName="ParentGuardian1PostalCode"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1MailingAddress]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingAddress]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingAddress]"
+                      cachedName="ParentGuardian1MailingAddress"
+                      cachedDataType="str"
+                      cachedLength="105"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1MailingCity]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingCity]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingCity]"
+                      cachedName="ParentGuardian1MailingCity"
+                      cachedDataType="str"
+                      cachedLength="24"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1MailingStateProvince]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingStateProvince]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingStateProvince]"
+                      cachedName="ParentGuardian1MailingStateProvince"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1MailingPostalCode]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingPostalCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingPostalCode]"
+                      cachedName="ParentGuardian1MailingPostalCode"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2LastName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2LastName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2LastName]"
+                      cachedName="ParentGuardian2LastName"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2FirstName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2FirstName]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2FirstName]"
+                      cachedName="ParentGuardian2FirstName"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2Line1]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2Line1]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2Line1]"
+                      cachedName="ParentGuardian2Line1"
+                      cachedDataType="str"
+                      cachedLength="105"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2City]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2City]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2City]"
+                      cachedName="ParentGuardian2City"
+                      cachedDataType="str"
+                      cachedLength="24"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2StateProvince]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2StateProvince]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2StateProvince]"
+                      cachedName="ParentGuardian2StateProvince"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2PostalCode]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2PostalCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2PostalCode]"
+                      cachedName="ParentGuardian2PostalCode"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1HomePhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1HomePhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1HomePhone]"
+                      cachedName="ParentGuardian1HomePhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1CellPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1CellPhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1CellPhone]"
+                      cachedName="ParentGuardian1CellPhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1OtherPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1OtherPhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1OtherPhone]"
+                      cachedName="ParentGuardian1OtherPhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1EmailAddress]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1EmailAddress]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1EmailAddress]"
+                      cachedName="ParentGuardian1EmailAddress"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1FatherWorkPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1FatherWorkPhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1FatherWorkPhone]"
+                      cachedName="ParentGuardian1FatherWorkPhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian1MotherWorkPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MotherWorkPhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MotherWorkPhone]"
+                      cachedName="ParentGuardian1MotherWorkPhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2HomePhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2HomePhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2HomePhone]"
+                      cachedName="ParentGuardian2HomePhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2CellPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2CellPhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2CellPhone]"
+                      cachedName="ParentGuardian2CellPhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2OtherPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2OtherPhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2OtherPhone]"
+                      cachedName="ParentGuardian2OtherPhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2EmailAddress]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2EmailAddress]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2EmailAddress]"
+                      cachedName="ParentGuardian2EmailAddress"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentGuardian2WorkPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2WorkPhone]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2WorkPhone]"
+                      cachedName="ParentGuardian2WorkPhone"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value1]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value1]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value1]"
+                      cachedName="Value1"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value2]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value2]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value2]"
+                      cachedName="Value2"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value3]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value3]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value3]"
+                      cachedName="Value3"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value4]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value4]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value4]"
+                      cachedName="Value4"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value5]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value5]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value5]"
+                      cachedName="Value5"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value6]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value6]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value6]"
+                      cachedName="Value6"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value7]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value7]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value7]"
+                      cachedName="Value7"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value8]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value8]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value8]"
+                      cachedName="Value8"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value9]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value9]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value9]"
+                      cachedName="Value9"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value10]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value10]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value10]"
+                      cachedName="Value10"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value11]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value11]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value11]"
+                      cachedName="Value11"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value12]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value12]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value12]"
+                      cachedName="Value12"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value13]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value13]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value13]"
+                      cachedName="Value13"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value14]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value14]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value14]"
+                      cachedName="Value14"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Value15]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value15]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value15]"
+                      cachedName="Value15"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedCodepage="1252" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LocalID]"
+                      name="LocalID"
+                      dataType="str"
+                      length="15"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SSID]"
+                      name="SSID"
+                      dataType="str"
+                      length="15"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SSN]"
+                      name="SSN"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      name="LastName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      name="FirstName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MiddleName]"
+                      name="MiddleName"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Ethnicity]"
+                      name="Ethnicity"
+                      dataType="str"
+                      length="3"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Race1]"
+                      name="Race1"
+                      dataType="str"
+                      length="3"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Race2]"
+                      name="Race2"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Race3]"
+                      name="Race3"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      name="Gender"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Birthdate]"
+                      name="Birthdate"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Migrant]"
+                      name="Migrant"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ELL]"
+                      name="ELL"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[GradeLevelCode]"
+                      name="GradeLevelCode"
+                      dataType="str"
+                      length="4"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1LastName]"
+                      name="ParentGuardian1LastName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1FirstName]"
+                      name="ParentGuardian1FirstName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1Line1]"
+                      name="ParentGuardian1Line1"
+                      dataType="str"
+                      length="105"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1City]"
+                      name="ParentGuardian1City"
+                      dataType="str"
+                      length="24"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1StateProvince]"
+                      name="ParentGuardian1StateProvince"
+                      dataType="str"
+                      length="2"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1PostalCode]"
+                      name="ParentGuardian1PostalCode"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingAddress]"
+                      name="ParentGuardian1MailingAddress"
+                      dataType="str"
+                      length="105"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingCity]"
+                      name="ParentGuardian1MailingCity"
+                      dataType="str"
+                      length="24"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingStateProvince]"
+                      name="ParentGuardian1MailingStateProvince"
+                      dataType="str"
+                      length="2"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MailingPostalCode]"
+                      name="ParentGuardian1MailingPostalCode"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2LastName]"
+                      name="ParentGuardian2LastName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2FirstName]"
+                      name="ParentGuardian2FirstName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2Line1]"
+                      name="ParentGuardian2Line1"
+                      dataType="str"
+                      length="105"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2City]"
+                      name="ParentGuardian2City"
+                      dataType="str"
+                      length="24"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2StateProvince]"
+                      name="ParentGuardian2StateProvince"
+                      dataType="str"
+                      length="2"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2PostalCode]"
+                      name="ParentGuardian2PostalCode"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1HomePhone]"
+                      name="ParentGuardian1HomePhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1CellPhone]"
+                      name="ParentGuardian1CellPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1OtherPhone]"
+                      name="ParentGuardian1OtherPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1EmailAddress]"
+                      name="ParentGuardian1EmailAddress"
+                      dataType="str"
+                      length="100"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1FatherWorkPhone]"
+                      name="ParentGuardian1FatherWorkPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian1MotherWorkPhone]"
+                      name="ParentGuardian1MotherWorkPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2HomePhone]"
+                      name="ParentGuardian2HomePhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2CellPhone]"
+                      name="ParentGuardian2CellPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2OtherPhone]"
+                      name="ParentGuardian2OtherPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2EmailAddress]"
+                      name="ParentGuardian2EmailAddress"
+                      dataType="str"
+                      length="100"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentGuardian2WorkPhone]"
+                      name="ParentGuardian2WorkPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value1]"
+                      name="Value1"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value2]"
+                      name="Value2"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value3]"
+                      name="Value3"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value4]"
+                      name="Value4"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value5]"
+                      name="Value5"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value6]"
+                      name="Value6"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value7]"
+                      name="Value7"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value8]"
+                      name="Value8"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value9]"
+                      name="Value9"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value10]"
+                      name="Value10"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value11]"
+                      name="Value11"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value12]"
+                      name="Value12"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value13]"
+                      name="Value13"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value14]"
+                      name="Value14"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Value15]"
+                      name="Value15"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              name="OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."></property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT INTO [dbo].[aaSEISStudents_Export](
+	personid,LocalID,SSID,SSN,LastName,FirstName,MiddleName,Ethnicity,Race1,Race2,Race3,Gender,Birthdate,Migrant,ELL,GradeLevelCode,ParentGuardian1LastName,ParentGuardian1FirstName,ParentGuardian1Line1,ParentGuardian1City,ParentGuardian1StateProvince,ParentGuardian1PostalCode,ParentGuardian1MailingAddress,ParentGuardian1MailingCity,ParentGuardian1MailingStateProvince,ParentGuardian1MailingPostalCode,ParentGuardian2LastName,ParentGuardian2FirstName,ParentGuardian2Line1,ParentGuardian2City,ParentGuardian2StateProvince,ParentGuardian2PostalCode,ParentGuardian1HomePhone,ParentGuardian1CellPhone,ParentGuardian1OtherPhone,ParentGuardian1EmailAddress,ParentGuardian1FatherWorkPhone,ParentGuardian1MotherWorkPhone,ParentGuardian2HomePhone,ParentGuardian2CellPhone,ParentGuardian2OtherPhone,ParentGuardian2EmailAddress,ParentGuardian2WorkPhone,Value1,Value2,Value3,Value4,Value5,Value6,Value7,Value8,Value9,Value10,Value11,Value12,Value13,Value14,Value15)
+
+Select distinct s.personid, s.studentnumber as 'LocalID',  s.stateid as 'SSID', ' ' as 'SSN', s.lastname as 'LastName', s.firstname as 'FirstName', ' ' as 'MiddleName',
+CASE WHEN  s.hispanicEthnicity ='Y' THEN '500' ELSE '501' END Ethnicity,
+CASE WHEN  s.raceethnicity = '500' then '700' when s.raceethnicity = '999' then '900'else s.raceethnicity end as 'Race1',
+' ' as 'Race2',
+' ' as 'Race3',
+s.gender as 'Gender',
+convert(varchar(10),s.birthdate, 101) as 'Birthdate',
+CASE WHEN e.migrant = 1 then 'Y'   else 'N' end as 'Migrant',
+MAX(CASE WHEN lep.programStatus ='lep' THEN 'Y' ELSE 'N' END)  ELL,
+CASE WHEN s.grade = '00' then '18' else s.grade END 'GradeLevelCode',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' 
+THEN ccs.lastname ELSE '' END) 'ParentGuardian1LastName',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' 
+THEN ccs.firstname ELSE '' END)'ParentGuardian1FirstName',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relatedBy = 'Household' THEN ccs.addressline1 END)'ParentGuardian1Line1',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relatedBy = 'Household' THEN ccs.city ELSE '' END)'ParentGuardian1City',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relatedBy = 'Household' THEN ccs.state  ELSE ''END)'ParentGuardian1StateProvince',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relatedBy = 'Household' THEN ccs.zip ELSE '' END)'ParentGuardian1PostalCode',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.mailing = 1 AND ccs.relatedBy = 'Household' THEN ccs.addressline1 ELSE '' END)'ParentGuardian1MailingAddress',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.mailing = 1 AND ccs.relatedBy = 'Household' THEN ccs.city ELSE '' END)'ParentGuardian1MailingCity',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.mailing = 1 AND ccs.relatedBy = 'Household' THEN ccs.state  ELSE '' END)'ParentGuardian1MailingStateProvince',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.mailing = 1 AND ccs.relatedBy = 'Household' THEN ccs.zip ELSE '' END)'ParentGuardian1MailingPostalCode',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' THEN ccs.lastname ELSE '' END) 'ParentGuardian2LastName',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' THEN ccs.firstname ELSE '' END)'ParentGuardian2FirstName',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.addressline1 ELSE '' END)'ParentGuardian2Line1',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.city ELSE '' END)'ParentGuardian2City',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.state ELSE '' END)'ParentGuardian2StateProvince',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.zip ELSE '' END)'ParentGuardian2PostalCode',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' THEN ccs.homephone ELSE '' END)'ParentGuardian1HomePhone',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' THEN ccs.cellphone ELSE '' END)'ParentGuardian1CellPhone',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' THEN ccs.householdphone ELSE '' END)'ParentGuardian1OtherPhone',		
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relationship &lt;&gt; 'self' AND ccs.relatedBy = 'Household' THEN ccs.email ELSE '' END)'ParentGuardian1EmailAddress',		
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relationship &lt;&gt; 'father' AND ccs.relatedBy = 'Household' THEN ccs.workphone ELSE '' END)'ParentGuardian1FatherWorkPhone',
+MAX(CASE WHEN ccs.Guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'f' AND ccs.relationship &lt;&gt; 'mother' AND ccs.relatedBy = 'Household' THEN ccs.workphone ELSE '' END)'ParentGuardian1MotherWorkPhone',		
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.homephone ELSE '' END)	'ParentGuardian2HomePhone',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.cellphone ELSE '' END)	'ParentGuardian2CellPhone',
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.householdphone ELSE '' END)'ParentGuardian2OtherPhone',		
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.email ELSE '' END)'ParentGuardian2EmailAddress',					
+MAX(CASE WHEN hl.enddate IS NULL AND ccs.guardian = 1 AND (ccs.secondary &lt;&gt;1 OR ccs.secondary IS NULL) AND ccs.Gender = 'm' AND ccs.relatedBy = 'Household' THEN ccs.workphone ELSE '' END)'ParentGuardian2WorkPhone',		
+' ' as 'Value1',
+' ' as 'Value2',
+' ' as 'Value3',
+' ' as 'Value4',
+' ' as 'Value5',
+' ' as 'Value6',
+' ' as 'Value7',
+' ' as 'Value8',
+' ' as 'Value9',
+' ' as 'Value10',
+' ' as 'Value11',
+' ' as 'Value12',
+' ' as 'Value13',
+' ' as 'Value14',
+' ' as 'Value15'
+
+FROM student s
+JOIN v_CensusContactSummary ccs ON ccs.personid = s.personid
+JOIN enrollment e ON e.enrollmentid =s.enrollmentid and e.serviceType ='p'
+LEFT JOIN householdlocation hl ON hl.householdid = ccs.householdid
+LEFT JOIN Address a on hl.addressID = a.addressID and ccs.addressID = a.addressID
+LEFT JOIN lep ON lep.personid =s.personid 
+	where s.stateid is not null and s.activeYear = '1' and s.endDate is null AND hl.endDate IS NULL
+	GROUP BY s.personid, s.studentnumber,s.lastname, s.firstname, s.birthdate, s.gender,s.hispanicEthnicity,s.raceEthnicity,
+s.grade, s.stateid,e.migrant
+	order by lastName,firstname
+
+	UPDATE aa 
+	SET parentguardian1firstname = ccs.firstname, parentguardian1lastname =ccs.lastname,ParentGuardian1Line1 =ccs.addressline1, ParentGuardian1City = ccs.city, ParentGuardian1StateProvince= ccs.state,
+ ParentGuardian1PostalCode = ccs.zip, ParentGuardian1MailingAddress = ma.addressline1, ParentGuardian1MailingCity = ma.city, ParentGuardian1MailingStateProvince = ma.state,
+ ParentGuardian1MailingPostalCode = ma.zip
+ FROM aaSEISStudents_Export aa
+ JOIN v_censuscontactsummary ccs ON ccs.personid = aa.personid and guardian = 1
+ JOIN v_MailingAddress ma ON ma.personid = aa.personid 
+ WHERE aa.parentguardian1firstname = ''
+
+
+	SELECT 		LocalID, SSID, SSN, LastName, FirstName, MiddleName, Ethnicity, Race1, Race2, Race3, Gender, Birthdate, Migrant,
+				ELL, GradeLevelCode, ParentGuardian1LastName, ParentGuardian1FirstName, ParentGuardian1Line1, ParentGuardian1City, ParentGuardian1StateProvince,
+				ParentGuardian1PostalCode, ParentGuardian1MailingAddress, ParentGuardian1MailingCity, ParentGuardian1MailingStateProvince,
+				ParentGuardian1MailingPostalCode, ParentGuardian2LastName, ParentGuardian2FirstName, ParentGuardian2Line1, ParentGuardian2City,
+				ParentGuardian2StateProvince, ParentGuardian2PostalCode, ParentGuardian1HomePhone, ParentGuardian1CellPhone, ParentGuardian1OtherPhone,
+				ParentGuardian1EmailAddress, ParentGuardian1FatherWorkPhone, ParentGuardian1MotherWorkPhone, ParentGuardian2HomePhone, ParentGuardian2CellPhone,
+				ParentGuardian2OtherPhone, ParentGuardian2EmailAddress, ParentGuardian2WorkPhone, Value1, Value2, Value3, Value4, Value5, Value6, Value7, Value8,
+				Value9, Value10, Value11, Value12, Value13, Value14, Value15
+				from aaSEISStudents_Export</property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">2</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[10.101.3.31.msantos]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.101.3.31.msantos]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocalID]"
+                      name="LocalID"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocalID]"
+                      length="15"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocalID]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SSID]"
+                      name="SSID"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SSID]"
+                      length="15"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SSID]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SSN]"
+                      name="SSN"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SSN]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SSN]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      name="MiddleName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ethnicity]"
+                      name="Ethnicity"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ethnicity]"
+                      length="3"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ethnicity]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race1]"
+                      name="Race1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race1]"
+                      length="3"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Race1]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race2]"
+                      name="Race2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race2]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Race2]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race3]"
+                      name="Race3"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Race3]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Race3]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birthdate]"
+                      name="Birthdate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birthdate]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Birthdate]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Migrant]"
+                      name="Migrant"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Migrant]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Migrant]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ELL]"
+                      name="ELL"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ELL]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ELL]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                      name="GradeLevelCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GradeLevelCode]"
+                      length="4"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1LastName]"
+                      name="ParentGuardian1LastName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1LastName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1LastName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1FirstName]"
+                      name="ParentGuardian1FirstName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1FirstName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1FirstName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1Line1]"
+                      name="ParentGuardian1Line1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1Line1]"
+                      length="105"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1Line1]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1City]"
+                      name="ParentGuardian1City"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1City]"
+                      length="24"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1City]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1StateProvince]"
+                      name="ParentGuardian1StateProvince"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1StateProvince]"
+                      length="2"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1StateProvince]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1PostalCode]"
+                      name="ParentGuardian1PostalCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1PostalCode]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1PostalCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingAddress]"
+                      name="ParentGuardian1MailingAddress"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingAddress]"
+                      length="105"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingAddress]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingCity]"
+                      name="ParentGuardian1MailingCity"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingCity]"
+                      length="24"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingCity]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingStateProvince]"
+                      name="ParentGuardian1MailingStateProvince"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingStateProvince]"
+                      length="2"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingStateProvince]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingPostalCode]"
+                      name="ParentGuardian1MailingPostalCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MailingPostalCode]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingPostalCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2LastName]"
+                      name="ParentGuardian2LastName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2LastName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2LastName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2FirstName]"
+                      name="ParentGuardian2FirstName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2FirstName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2FirstName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2Line1]"
+                      name="ParentGuardian2Line1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2Line1]"
+                      length="105"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2Line1]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2City]"
+                      name="ParentGuardian2City"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2City]"
+                      length="24"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2City]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2StateProvince]"
+                      name="ParentGuardian2StateProvince"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2StateProvince]"
+                      length="2"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2StateProvince]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2PostalCode]"
+                      name="ParentGuardian2PostalCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2PostalCode]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2PostalCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1HomePhone]"
+                      name="ParentGuardian1HomePhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1HomePhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1HomePhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1CellPhone]"
+                      name="ParentGuardian1CellPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1CellPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1CellPhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1OtherPhone]"
+                      name="ParentGuardian1OtherPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1OtherPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1OtherPhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1EmailAddress]"
+                      name="ParentGuardian1EmailAddress"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1EmailAddress]"
+                      length="100"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1EmailAddress]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1FatherWorkPhone]"
+                      name="ParentGuardian1FatherWorkPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1FatherWorkPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1FatherWorkPhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MotherWorkPhone]"
+                      name="ParentGuardian1MotherWorkPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian1MotherWorkPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MotherWorkPhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2HomePhone]"
+                      name="ParentGuardian2HomePhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2HomePhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2HomePhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2CellPhone]"
+                      name="ParentGuardian2CellPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2CellPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2CellPhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2OtherPhone]"
+                      name="ParentGuardian2OtherPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2OtherPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2OtherPhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2EmailAddress]"
+                      name="ParentGuardian2EmailAddress"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2EmailAddress]"
+                      length="100"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2EmailAddress]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2WorkPhone]"
+                      name="ParentGuardian2WorkPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentGuardian2WorkPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2WorkPhone]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value1]"
+                      name="Value1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value1]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value1]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value2]"
+                      name="Value2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value2]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value2]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value3]"
+                      name="Value3"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value3]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value3]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value4]"
+                      name="Value4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value4]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value4]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value5]"
+                      name="Value5"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value5]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value5]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value6]"
+                      name="Value6"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value6]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value6]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value7]"
+                      name="Value7"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value7]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value7]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value8]"
+                      name="Value8"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value8]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value8]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value9]"
+                      name="Value9"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value9]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value9]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value10]"
+                      name="Value10"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value10]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value10]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value11]"
+                      name="Value11"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value11]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value11]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value12]"
+                      name="Value12"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value12]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value12]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value13]"
+                      name="Value13"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value13]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value13]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value14]"
+                      name="Value14"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value14]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value14]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value15]"
+                      name="Value15"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Value15]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value15]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocalID]"
+                      name="LocalID"
+                      dataType="str"
+                      length="15"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SSID]"
+                      name="SSID"
+                      dataType="str"
+                      length="15"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SSN]"
+                      name="SSN"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      name="LastName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      name="FirstName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      name="MiddleName"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ethnicity]"
+                      name="Ethnicity"
+                      dataType="str"
+                      length="3"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Race1]"
+                      name="Race1"
+                      dataType="str"
+                      length="3"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Race2]"
+                      name="Race2"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Race3]"
+                      name="Race3"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      name="Gender"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Birthdate]"
+                      name="Birthdate"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Migrant]"
+                      name="Migrant"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ELL]"
+                      name="ELL"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GradeLevelCode]"
+                      name="GradeLevelCode"
+                      dataType="str"
+                      length="4"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1LastName]"
+                      name="ParentGuardian1LastName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1FirstName]"
+                      name="ParentGuardian1FirstName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1Line1]"
+                      name="ParentGuardian1Line1"
+                      dataType="str"
+                      length="105"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1City]"
+                      name="ParentGuardian1City"
+                      dataType="str"
+                      length="24"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1StateProvince]"
+                      name="ParentGuardian1StateProvince"
+                      dataType="str"
+                      length="2"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1PostalCode]"
+                      name="ParentGuardian1PostalCode"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingAddress]"
+                      name="ParentGuardian1MailingAddress"
+                      dataType="str"
+                      length="105"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingCity]"
+                      name="ParentGuardian1MailingCity"
+                      dataType="str"
+                      length="24"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingStateProvince]"
+                      name="ParentGuardian1MailingStateProvince"
+                      dataType="str"
+                      length="2"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MailingPostalCode]"
+                      name="ParentGuardian1MailingPostalCode"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2LastName]"
+                      name="ParentGuardian2LastName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2FirstName]"
+                      name="ParentGuardian2FirstName"
+                      dataType="str"
+                      length="50"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2Line1]"
+                      name="ParentGuardian2Line1"
+                      dataType="str"
+                      length="105"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2City]"
+                      name="ParentGuardian2City"
+                      dataType="str"
+                      length="24"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2StateProvince]"
+                      name="ParentGuardian2StateProvince"
+                      dataType="str"
+                      length="2"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2PostalCode]"
+                      name="ParentGuardian2PostalCode"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1HomePhone]"
+                      name="ParentGuardian1HomePhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1CellPhone]"
+                      name="ParentGuardian1CellPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1OtherPhone]"
+                      name="ParentGuardian1OtherPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1EmailAddress]"
+                      name="ParentGuardian1EmailAddress"
+                      dataType="str"
+                      length="100"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1FatherWorkPhone]"
+                      name="ParentGuardian1FatherWorkPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian1MotherWorkPhone]"
+                      name="ParentGuardian1MotherWorkPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2HomePhone]"
+                      name="ParentGuardian2HomePhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2CellPhone]"
+                      name="ParentGuardian2CellPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2OtherPhone]"
+                      name="ParentGuardian2OtherPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2EmailAddress]"
+                      name="ParentGuardian2EmailAddress"
+                      dataType="str"
+                      length="100"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentGuardian2WorkPhone]"
+                      name="ParentGuardian2WorkPhone"
+                      dataType="str"
+                      length="25"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value1]"
+                      name="Value1"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value2]"
+                      name="Value2"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value3]"
+                      name="Value3"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value4]"
+                      name="Value4"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value5]"
+                      name="Value5"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value6]"
+                      name="Value6"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value7]"
+                      name="Value7"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value8]"
+                      name="Value8"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value9]"
+                      name="Value9"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value10]"
+                      name="Value10"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value11]"
+                      name="Value11"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value12]"
+                      name="Value12"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value13]"
+                      name="Value13"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value14]"
+                      name="Value14"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Value15]"
+                      name="Value15"
+                      dataType="str"
+                      length="1"
+                      codePage="1252" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocalID]"
+                      name="LocalID"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocalID]"
+                      length="15"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SSID]"
+                      name="SSID"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SSID]"
+                      length="15"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SSN]"
+                      name="SSN"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SSN]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      name="MiddleName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ethnicity]"
+                      name="Ethnicity"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ethnicity]"
+                      length="3"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Race1]"
+                      name="Race1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Race1]"
+                      length="3"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Race2]"
+                      name="Race2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Race2]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Race3]"
+                      name="Race3"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Race3]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Birthdate]"
+                      name="Birthdate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Birthdate]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Migrant]"
+                      name="Migrant"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Migrant]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ELL]"
+                      name="ELL"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ELL]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                      name="GradeLevelCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GradeLevelCode]"
+                      length="4"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1LastName]"
+                      name="ParentGuardian1LastName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1LastName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1FirstName]"
+                      name="ParentGuardian1FirstName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1FirstName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1Line1]"
+                      name="ParentGuardian1Line1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1Line1]"
+                      length="105"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1City]"
+                      name="ParentGuardian1City"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1City]"
+                      length="24"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1StateProvince]"
+                      name="ParentGuardian1StateProvince"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1StateProvince]"
+                      length="2"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1PostalCode]"
+                      name="ParentGuardian1PostalCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1PostalCode]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingAddress]"
+                      name="ParentGuardian1MailingAddress"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingAddress]"
+                      length="105"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingCity]"
+                      name="ParentGuardian1MailingCity"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingCity]"
+                      length="24"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingStateProvince]"
+                      name="ParentGuardian1MailingStateProvince"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingStateProvince]"
+                      length="2"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingPostalCode]"
+                      name="ParentGuardian1MailingPostalCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MailingPostalCode]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2LastName]"
+                      name="ParentGuardian2LastName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2LastName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2FirstName]"
+                      name="ParentGuardian2FirstName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2FirstName]"
+                      length="50"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2Line1]"
+                      name="ParentGuardian2Line1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2Line1]"
+                      length="105"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2City]"
+                      name="ParentGuardian2City"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2City]"
+                      length="24"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2StateProvince]"
+                      name="ParentGuardian2StateProvince"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2StateProvince]"
+                      length="2"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2PostalCode]"
+                      name="ParentGuardian2PostalCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2PostalCode]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1HomePhone]"
+                      name="ParentGuardian1HomePhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1HomePhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1CellPhone]"
+                      name="ParentGuardian1CellPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1CellPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1OtherPhone]"
+                      name="ParentGuardian1OtherPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1OtherPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1EmailAddress]"
+                      name="ParentGuardian1EmailAddress"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1EmailAddress]"
+                      length="100"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1FatherWorkPhone]"
+                      name="ParentGuardian1FatherWorkPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1FatherWorkPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MotherWorkPhone]"
+                      name="ParentGuardian1MotherWorkPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian1MotherWorkPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2HomePhone]"
+                      name="ParentGuardian2HomePhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2HomePhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2CellPhone]"
+                      name="ParentGuardian2CellPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2CellPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2OtherPhone]"
+                      name="ParentGuardian2OtherPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2OtherPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2EmailAddress]"
+                      name="ParentGuardian2EmailAddress"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2EmailAddress]"
+                      length="100"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2WorkPhone]"
+                      name="ParentGuardian2WorkPhone"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentGuardian2WorkPhone]"
+                      length="25"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value1]"
+                      name="Value1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value1]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value2]"
+                      name="Value2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value2]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value3]"
+                      name="Value3"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value3]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value4]"
+                      name="Value4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value4]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value5]"
+                      name="Value5"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value5]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value6]"
+                      name="Value6"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value6]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value7]"
+                      name="Value7"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value7]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value8]"
+                      name="Value8"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value8]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value9]"
+                      name="Value9"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value9]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value10]"
+                      name="Value10"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value10]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value11]"
+                      name="Value11"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value11]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value12]"
+                      name="Value12"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value12]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value13]"
+                      name="Value13"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value13]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value14]"
+                      name="Value14"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value14]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value15]"
+                      name="Value15"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Value15]"
+                      length="1"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:DTSID="{3A94B62B-4D91-41C0-B028-07372DC6012A}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{25FEE835-5337-4A89-8A07-577674601C92}"
+          SQLTask:SqlStatementSource="DROP table aaSEISStudents_Export&#xA;&#xA;CREATE TABLE [dbo].[aaSEISStudents_Export](&#xA;&#x9;[personid] [int] NOT NULL,&#xA;&#x9;[LocalID] [varchar](15) NULL,&#xA;&#x9;[SSID] [varchar](15) NULL,&#xA;&#x9;[SSN] [varchar](1) NULL,&#xA;&#x9;[LastName] [varchar](50) NOT NULL,&#xA;&#x9;[FirstName] [varchar](50) NULL,&#xA;&#x9;[MiddleName] [varchar](1) NOT NULL,&#xA;&#x9;[Ethnicity] [varchar](3) NOT NULL,&#xA;&#x9;[Race1] [varchar](3) NULL,&#xA;&#x9;[Race2] [varchar](1) NULL,&#xA;&#x9;[Race3] [varchar](1) NULL,&#xA;&#x9;[Gender] [char](1) NULL,&#xA;&#x9;[Birthdate] [varchar](10) NULL,&#xA;&#x9;[Migrant] [varchar](1) NULL,&#xA;&#x9;[ELL] [varchar](1) NULL,&#xA;&#x9;[GradeLevelCode] [varchar](4) NULL,&#xA;&#x9;[ParentGuardian1LastName] [varchar](50) NULL,&#xA;&#x9;[ParentGuardian1FirstName] [varchar](50) NULL,&#xA;&#x9;[ParentGuardian1Line1] [varchar](105) NULL,&#xA;&#x9;[ParentGuardian1City] [varchar](24) NULL,&#xA;&#x9;[ParentGuardian1StateProvince] [varchar](2) NULL,&#xA;&#x9;[ParentGuardian1PostalCode] [varchar](10) NULL,&#xA;&#x9;[ParentGuardian1MailingAddress] [varchar](105) NULL,&#xA;&#x9;[ParentGuardian1MailingCity] [varchar](24) NULL,&#xA;&#x9;[ParentGuardian1MailingStateProvince] [varchar](2) NULL,&#xA;&#x9;[ParentGuardian1MailingPostalCode] [varchar](10) NULL,&#xA;&#x9;[ParentGuardian2LastName] [varchar](50) NULL,&#xA;&#x9;[ParentGuardian2FirstName] [varchar](50) NULL,&#xA;&#x9;[ParentGuardian2Line1] [varchar](105) NULL,&#xA;&#x9;[ParentGuardian2City] [varchar](24) NULL,&#xA;&#x9;[ParentGuardian2StateProvince] [varchar](2) NULL,&#xA;&#x9;[ParentGuardian2PostalCode] [varchar](10) NULL,&#xA;&#x9;[ParentGuardian1HomePhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian1CellPhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian1OtherPhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian1EmailAddress] [varchar](100) NULL,&#xA;&#x9;[ParentGuardian1FatherWorkPhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian1MotherWorkPhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian2HomePhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian2CellPhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian2OtherPhone] [varchar](25) NULL,&#xA;&#x9;[ParentGuardian2EmailAddress] [varchar](100) NULL,&#xA;&#x9;[ParentGuardian2WorkPhone] [varchar](25) NULL,&#xA;&#x9;[Value1] [varchar](1) NULL,&#xA;&#x9;[Value2] [varchar](1) NULL,&#xA;&#x9;[Value3] [varchar](1) NULL,&#xA;&#x9;[Value4] [varchar](1) NULL,&#xA;&#x9;[Value5] [varchar](1) NULL,&#xA;&#x9;[Value6] [varchar](1) NULL,&#xA;&#x9;[Value7] [varchar](1) NULL,&#xA;&#x9;[Value8] [varchar](1) NULL,&#xA;&#x9;[Value9] [varchar](1) NULL,&#xA;&#x9;[Value10] [varchar](1) NULL,&#xA;&#x9;[Value11] [varchar](1) NULL,&#xA;&#x9;[Value12] [varchar](1) NULL,&#xA;&#x9;[Value13] [varchar](1) NULL,&#xA;&#x9;[Value14] [varchar](1) NULL,&#xA;&#x9;[Value15] [varchar](1) NULL&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Execute SQL Task"
+      DTS:To="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{3B20157C-A9C9-4AEE-932F-CE70492821CD}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Data Flow Task"
+          TopLeft="314,210" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="280,79" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="362,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28,89"
+              Start="0,0"
+              End="28,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5"
+                    Point2="0,44.5"
+                    Point3="4,44.5" />
+                  <mssgle:LineSegment
+                    End="24,44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24,44.5"
+                    Point2="28,44.5"
+                    Point3="28,48.5" />
+                  <mssgle:LineSegment
+                    End="28,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="277,141" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="486,319" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="352.5,183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="220,136"
+              Start="0,0"
+              End="220,128.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,64"
+                    Point2="0,68"
+                    Point3="4,68" />
+                  <mssgle:LineSegment
+                    End="216,68" />
+                  <mssgle:CubicBezierSegment
+                    Point1="216,68"
+                    Point2="220,68"
+                    Point3="220,72" />
+                  <mssgle:LineSegment
+                    End="220,128.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
